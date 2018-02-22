@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 
 const propTypes = {};
 
-class TextField extends React.Component {
+class NumberField extends React.Component {
+  //state = { text: '' };
+
   constructor (props) {
     super(props);
+    //this.state = { text:props.fieldValue };
   }
 
   componentWillReceiveProps = (nextProps) => {
@@ -19,14 +22,15 @@ class TextField extends React.Component {
   };
 
   render () {
-    return (<input type="text"
+    return (<input type="number"
                    autoComplete=''
                    value={this.props.fieldValue} onChange={this.valueChange}
                    name={this.props.name} id={this.props.name}
-                   {...this.props.fieldHtmlAttibutes}/>);
+                   {...this.props.fieldHtmlAttibutes}
+    />);
   }
 }
 
-TextField.propTypes = propTypes;
+NumberField.propTypes = propTypes;
 
-export default TextField;
+export default NumberField;
